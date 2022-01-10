@@ -19,7 +19,7 @@ export const HeaderContainer = styled(ContainerL)`
 
 export const SliderContainer = styled(ContainerL)`
   position: relative;
-  height: 40vh;
+  min-height: 450px;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto;

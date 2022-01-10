@@ -41,7 +41,7 @@ export const SearchElement = () => {
         onBlur={closeInput}
       />
       <button onClick={searchHandler} onMouseDown={helper}>
-        <AiOutlineSearch size="1.5em" />
+        <AiOutlineSearch className="searh-icon" />
       </button>
     </SearchInput>
   );

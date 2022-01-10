@@ -12,8 +12,14 @@ export const MainTitle = styled.p`
 export const BigTitle = styled.h3`
   font-size: ${theme.title.xlarge.fontSize}px;
   font-weight: ${theme.title.xlarge.fontWeigth}px;
+  @media screen and (max-width: 570px) {
+    font-size: 24px;
+  }
 `;
 
 export const SmallText = styled.p`
   font-size: ${theme.text.small.fontSize}px;
+  @media screen and (max-width: 570px) {
+    font-size: 14px;
+  }
 `;

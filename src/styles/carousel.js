@@ -4,7 +4,6 @@ import { BigTitle, SmallText } from "./text";
 import { ButtonOk } from "./components";
 
 export const Slider = styled.div`
-  height: 40vh;
   background-color: black;
   overflow: hidden;
 `;
@@ -21,6 +20,9 @@ export const Slide = styled.div`
   transition: 1s ease;
   -webkit-box-shadow: inset 50px 0px 35px -19px #000000;
   box-shadow: inset 50px 0px 35px -19px #000000;
+  @media screen and (max-width: 570px) {
+    left: 0;
+  }
 `;
 
 const translateLeft = keyframes`
@@ -44,6 +46,10 @@ export const SliderDescription = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media screen and (max-width: 769px) {
+    padding: 15px;
+  }
 `;
 
 export const SliderTitle = styled(BigTitle)`
@@ -84,6 +90,11 @@ export const SliderControls = styled.div`
   left: 50%;
   bottom: 10%;
   transform: translateX(-50%);
+  @media screen and (max-width: 570px) {
+    display: flex;
+    flex-direction: column;
+    left: 80%;
+  }
 `;
 
 export const SliderControlBtn = styled.div`
@@ -94,6 +105,7 @@ export const SliderControlBtn = styled.div`
   cursor: pointer;
   border-radius: 30px;
   transition: 0.3s ease;
+
   :hover {
     background-color: rgba(255, 255, 255, 0.5);
     color: black;
@@ -115,11 +127,14 @@ export const SliderNavs = styled.div`
   display: flex;
   z-index: 2;
   justify-self: center;
+  @media screen and (max-width: 570px) {
+    display: none;
+  }
 `;
 
 export const SliderDot = styled.div`
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 100%;
   margin: 0 3px;
   border: 1px solid white;
