@@ -18,7 +18,7 @@ export const BigTitle = styled.h3`
 `;
 
 export const SmallText = styled.p`
-  font-size: ${theme.text.small.fontSize}px;
+  font-size: ${theme.text.medium.fontSize}px;
   @media screen and (max-width: 570px) {
     font-size: 14px;
   }

@@ -61,7 +61,7 @@ export const ButtonOk = styled.button`
   cursor: pointer;
   border-radius: 30px;
   transition: 0.3s ease;
-  font-size: ${theme.text.small.fontSize}px;
+  font-size: ${theme.text.medium.fontSize}px;
   :hover {
     -webkit-box-shadow: 0px 0px 9px 3px rgba(255, 255, 255, 0.57);
     box-shadow: 0px 0px 9px 3px rgba(255, 255, 255, 0.57);

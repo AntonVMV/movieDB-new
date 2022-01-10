@@ -1,13 +1,13 @@
 export const theme = {
   text: {
-    small: {
-      fontSize: 16,
+    medium: {
+      fontSize: 18,
     },
   },
   title: {
     xlarge: {
       fontWeigth: 700,
-      fontSize: 30,
+      fontSize: 32,
     },
     large: {
       fontWeigth: 600,
