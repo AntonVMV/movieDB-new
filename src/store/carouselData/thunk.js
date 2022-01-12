@@ -9,8 +9,7 @@ export const getCarouselRequest = () => async (dispatch) => {
   dispatch(getCarouselData());
   try {
     const result = await getDataRequest(
-      "movie/now_playing?",
-      "&language=en-US&page=1"
+      "movie/now_playing?language=en-US&page=1"
     );
     dispatch(getCarouselDataSuccesss(result.results));
   } catch (e) {

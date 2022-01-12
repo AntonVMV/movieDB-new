@@ -4,8 +4,12 @@ import { theme } from "./theme";
 export const ContainerL = styled.div`
   max-width: 80vw;
   margin: 0 auto;
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
-    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.7) inset;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    -19px 0px 50px -19px rgba(0, 0, 0, 0),
+    inset 0px 0px 43px -7px rgba(0, 0, 0, 0.42);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    -19px 0px 50px -19px rgba(0, 0, 0, 0),
+    inset 0px 0px 43px -7px rgba(0, 0, 0, 0.42);
   @media screen and (max-width: 760px) {
     max-width: 100vw;
   }

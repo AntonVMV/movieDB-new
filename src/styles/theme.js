@@ -13,9 +13,14 @@ export const theme = {
       fontWeigth: 600,
       fontSize: 24,
     },
+    medium: {
+      fontWeigth: 600,
+      fontSize: 22,
+    },
   },
   colors: {
     primary: "#8c2222",
     secondary: "#832020",
+    text: "#fff",
   },
 };

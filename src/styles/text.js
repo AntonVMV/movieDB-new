@@ -1,7 +1,7 @@
 import { theme } from "./theme";
 import styled from "styled-components";
 
-export const MainTitle = styled.p`
+export const MainTitle = styled.h2`
   margin: 0;
   padding: 0;
   font-size: ${theme.title.large.fontSize}px;
@@ -11,10 +11,15 @@ export const MainTitle = styled.p`
 
 export const BigTitle = styled.h3`
   font-size: ${theme.title.xlarge.fontSize}px;
-  font-weight: ${theme.title.xlarge.fontWeigth}px;
+  font-weight: ${theme.title.xlarge.fontWeigth};
   @media screen and (max-width: 570px) {
     font-size: 24px;
   }
+`;
+
+export const MedTitle = styled.h4`
+  font-size: ${theme.title.medium.fontSize}px;
+  font-weight: ${theme.title.medium.fontWeigth};
 `;
 
 export const SmallText = styled.p`
