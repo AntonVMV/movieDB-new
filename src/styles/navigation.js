@@ -31,7 +31,7 @@ export const NavLinkStyled = styled(NavLink)`
 
 export const LinkBg = styled.div`
   height: 40px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   transition: 0.3s ease;
   z-index: -1;

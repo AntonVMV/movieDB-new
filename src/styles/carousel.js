@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
-import { BigTitle, SmallText } from "./text";
+import { BigTitle, MedText } from "./text";
 import { ButtonOk } from "./components";
 import { ContainerL } from "./containers";
 
@@ -64,7 +64,7 @@ export const SliderTitle = styled(BigTitle)`
   animation: ${translateLeft} 1s ease forwards;
 `;
 
-export const SliderText = styled(SmallText)`
+export const SliderText = styled(MedText)`
   display: flex;
   align-items: center;
   width: 70%;

@@ -29,12 +29,11 @@ export const TabItem = styled.li`
 export const TabBG = styled.div`
   background: url(${(props) => props.img}) center center no-repeat;
   background-size: contain;
-  -webkit-box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.78);
-  box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.48);
   transition: 0.3s ease;
   display: grid;
   position: relative;
   overflow: hidden;
+  border-radius: 16px;
 `;
 
 export const MovieInfo = styled.div`

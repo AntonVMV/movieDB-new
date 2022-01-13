@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { ContainerL } from "../../styles/containers";
 import { TabList, TabItem, MovieInfo, TabBG, InfoIcon } from "../../styles/tab";
-import { MedTitle, SmallTitle } from "../../styles/text";
+import { MedTitle, SmallTitle, SmallText } from "../../styles/text";
 import { SliderRating } from "../../styles/carousel";
 import { AiOutlineStar } from "react-icons/ai";
 
@@ -10,7 +10,7 @@ export const TabContent = () => {
   const { genres } = useSelector((store) => store.genresListReducer);
 
   const strSlice = (str) => {
-    return str.length > 250 ? str.slice(0, 250) + ". . ." : str;
+    return str.length > 230 ? str.slice(0, 230) + ". . ." : str;
   };
 
   const parseGenres = (ids) => {
@@ -37,14 +37,16 @@ export const TabContent = () => {
                 >
                   <InfoIcon />
                   <MovieInfo>
-                    <MedTitle>{item.title}</MedTitle>
-                    {item.overview && <p>{strSlice(item.overview)}</p>}
+                    <SmallTitle>{item.title}</SmallTitle>
+                    {item.overview && (
+                      <SmallText>{strSlice(item.overview)}</SmallText>
+                    )}
                     <p>{genres && parseGenres(item.genre_ids)}</p>
                     <SliderRating>
                       <AiOutlineStar />
                       {item.vote_average}
                     </SliderRating>
-                    <p></p>
+
                     <p>
                       Release: <b>{item.release_date}</b>
                     </p>

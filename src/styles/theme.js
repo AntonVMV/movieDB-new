@@ -3,6 +3,9 @@ export const theme = {
     medium: {
       fontSize: 18,
     },
+    small: {
+      fontSize: 14,
+    },
   },
   title: {
     xlarge: {
@@ -19,7 +22,7 @@ export const theme = {
     },
     small: {
       fontWeigth: 600,
-      fontSize: 20,
+      fontSize: 18,
     },
   },
   colors: {

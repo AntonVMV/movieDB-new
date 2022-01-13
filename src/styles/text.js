@@ -27,9 +27,13 @@ export const SmallTitle = styled.h3`
   font-weight: ${theme.title.small.fontWeigth};
 `;
 
-export const SmallText = styled.p`
+export const MedText = styled.p`
   font-size: ${theme.text.medium.fontSize}px;
   @media screen and (max-width: 570px) {
     font-size: 14px;
   }
+`;
+
+export const SmallText = styled.p`
+  font-size: ${theme.text.small.fontSize}px;
 `;
