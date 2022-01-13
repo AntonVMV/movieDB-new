@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "./theme";
 import { NavLink } from "react-router-dom";
 
@@ -9,24 +9,16 @@ const List = styled.ul`
 `;
 
 export const NavList = styled(List)`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  align-items: center;
-  justify-items: center;
-  grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
   padding: 20px;
   text-transform: uppercase;
   font-size: ${theme.text.medium.fontSize}px;
-
-  ::before {
-    content: "";
-    width: ${(props) => props.active.width}px;
-    height: 3px;
-    background-color: white;
-    position: absolute;
-    top: ${(props) => props.active.y}px;
-    left: ${(props) => props.active.x}px;
-    transition: 0.4s ease;
+  li {
+    padding: 10px;
+  }
+  :hover {
+    opacity: 1;
   }
 `;
 
@@ -35,7 +27,21 @@ export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s ease;
-  :hover {
-    color: grey;
-  }
+`;
+
+export const LinkBg = styled.div`
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  transition: 0.3s ease;
+  z-index: -1;
+  border-radius: 5px;
+  ${(props) =>
+    props.coords
+      ? css`
+          width: ${(props) => props.coords.width}px;
+          top: ${(props) => props.coords.y}px;
+          left: ${(props) => props.coords.x}px;
+        `
+      : null};
 `;

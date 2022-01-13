@@ -7,6 +7,7 @@ export const TabList = styled.ul`
   background-color: white;
   display: grid;
   row-gap: 40px;
+  column-gap: 20px;
   justify-content: space-around;
   grid-template-columns: repeat(auto-fill, 300px);
 `;

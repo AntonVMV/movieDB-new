@@ -1,45 +1,32 @@
 import { ContainerL } from "../../styles/containers";
 import * as NavStyle from "../../styles/navigation";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 const tabs = ["Latest", "Top Rated", "Upcoming", "Discover"];
 
 export const Navigation = () => {
-  const [active, setActive] = useState([]);
+  const [coords, setCoords] = useState(null);
   const container = useRef();
 
-  const test = () => {
-    [...container.current.children].forEach((item) => {
-      if ([...item.children[0].classList].includes("active")) {
-        getCoords(item);
-      }
-    });
-  };
-
-  useEffect(() => {
-    test();
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("resize", test);
-    return () => window.removeEventListener("resize", test);
-  }, []);
-
   const getCoords = (el) => {
-    const { left, bottom, width } = el.getBoundingClientRect();
-    setActive({
+    const { left, top, width } = el.getBoundingClientRect();
+    setCoords({
       x: left + window.pageXOffset,
-      y: bottom + window.pageYOffset,
+      y: top + window.pageYOffset,
       width,
     });
   };
 
   return (
     <ContainerL>
-      <NavStyle.NavList active={active} ref={container}>
+      <NavStyle.NavList ref={container}>
         {tabs.map((item, index) => {
           return (
-            <li key={index} onClick={(e) => getCoords(e.currentTarget)}>
+            <li
+              key={index}
+              onMouseEnter={(e) => getCoords(e.currentTarget)}
+              onMouseLeave={() => setCoords(null)}
+            >
               <NavStyle.NavLinkStyled
                 to={item === "Latest" ? "/" : item.split(" ").join("")}
               >
@@ -48,6 +35,7 @@ export const Navigation = () => {
             </li>
           );
         })}
+        <NavStyle.LinkBg coords={coords} />
       </NavStyle.NavList>
     </ContainerL>
   );
