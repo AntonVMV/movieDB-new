@@ -2,7 +2,7 @@ import { ContainerL } from "../../styles/containers";
 import * as NavStyle from "../../styles/navigation";
 import { useState, useRef, useEffect } from "react";
 
-const tabs = ["Latest", "Top Rated", "Upcoming"];
+const tabs = ["Latest", "Top Rated", "Upcoming", "Discover"];
 
 export const Navigation = () => {
   const [active, setActive] = useState([]);

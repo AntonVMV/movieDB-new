@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { css, keyframes } from "styled-components";
+import { keyframes } from "styled-components";
 import { BigTitle, SmallText } from "./text";
 import { ButtonOk } from "./components";
 import { ContainerL } from "./containers";

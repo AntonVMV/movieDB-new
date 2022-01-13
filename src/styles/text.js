@@ -17,9 +17,14 @@ export const BigTitle = styled.h3`
   }
 `;
 
-export const MedTitle = styled.h4`
+export const MedTitle = styled.h3`
   font-size: ${theme.title.medium.fontSize}px;
   font-weight: ${theme.title.medium.fontWeigth};
+`;
+
+export const SmallTitle = styled.h3`
+  font-size: ${theme.title.small.fontSize}px;
+  font-weight: ${theme.title.small.fontWeigth};
 `;
 
 export const SmallText = styled.p`

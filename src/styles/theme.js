@@ -17,6 +17,10 @@ export const theme = {
       fontWeigth: 600,
       fontSize: 22,
     },
+    small: {
+      fontWeigth: 600,
+      fontSize: 20,
+    },
   },
   colors: {
     primary: "#8c2222",

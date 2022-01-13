@@ -8,9 +8,11 @@ export const Global = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
         box-sizing: border-box;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        
     }
 
     body{
         background-color: ${theme.colors.secondary};
+        overflow-y: scroll;
     }
 `;

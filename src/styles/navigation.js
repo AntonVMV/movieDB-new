@@ -26,7 +26,7 @@ export const NavList = styled(List)`
     position: absolute;
     top: ${(props) => props.active.y}px;
     left: ${(props) => props.active.x}px;
-    transition: 0.3s ease;
+    transition: 0.4s ease;
   }
 `;
 
