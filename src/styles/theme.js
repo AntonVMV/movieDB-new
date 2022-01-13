@@ -23,8 +23,7 @@ export const theme = {
     },
   },
   colors: {
-    primary: "#8c2222",
-    secondary: "#832020",
-    text: "#fff",
+    primary: "#fafafa",
+    text: "#000",
   },
 };

@@ -47,14 +47,14 @@ export const SliderDescription = styled(ContainerL)`
   width: 100%;
   position: relative;
   z-index: 1;
-  padding: 30px;
+  padding: 60px 20px;
   display: ${(props) => (props.active ? "flex" : "none")};
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   box-shadow: none;
   @media screen and (max-width: 769px) {
-    padding: 15px;
+    padding: 60px 20px 20px;
   }
 `;
 
@@ -70,6 +70,9 @@ export const SliderText = styled(SmallText)`
   width: 70%;
   opacity: 0;
   animation: ${translateLeft} 1s 0.2s ease forwards;
+  @media screen and (max-width: 769px) {
+    width: 100%;
+  }
 `;
 
 export const SliderRating = styled.div`

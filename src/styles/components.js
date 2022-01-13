@@ -54,8 +54,8 @@ export const SearchInput = styled.div`
 /*=================Button-OK=================*/
 
 export const ButtonOk = styled.button`
-  color: white;
-  background-color: #3a577e;
+  color: ${theme.colors.text};
+  background-color: ${theme.colors.primary};
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -67,6 +67,6 @@ export const ButtonOk = styled.button`
     box-shadow: 0px 0px 9px 3px rgba(255, 255, 255, 0.57);
   }
   :active {
-    background-color: #2a3e5a;
+    background-color: #cfcfcf;
   }
 `;

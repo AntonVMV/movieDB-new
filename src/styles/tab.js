@@ -9,20 +9,19 @@ export const TabList = styled.ul`
   row-gap: 40px;
   column-gap: 20px;
   justify-content: space-around;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(auto-fill, 260px);
 `;
 
 export const TabItem = styled.li`
   display: grid;
-  grid-template-rows: 450px auto;
+  grid-template-rows: 390px auto;
   grid-gap: 20px;
   transition: 0.4s ease;
   cursor: pointer;
   :hover {
-    text-decoration: underline;
     div {
-      -webkit-box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.78);
-      box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.48);
+      -webkit-box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, 0.48);
+      box-shadow: 0px 7px 12px 4px rgba(0, 0, 0, 0.48);
     }
   }
 `;
@@ -30,8 +29,8 @@ export const TabItem = styled.li`
 export const TabBG = styled.div`
   background: url(${(props) => props.img}) center center no-repeat;
   background-size: contain;
-  -webkit-box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, 0.78);
-  box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, 0.78);
+  -webkit-box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.78);
+  box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.48);
   transition: 0.3s ease;
   display: grid;
   position: relative;
