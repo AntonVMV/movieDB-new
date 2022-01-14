@@ -19,10 +19,10 @@ export const Navigation = () => {
 
   return (
     <ContainerL>
-      <NavStyle.NavList ref={container}>
+      <NavStyle.NavList>
         {tabs.map((item, index) => {
           return (
-            <li
+            <NavStyle.NavListEl
               key={index}
               onMouseEnter={(e) => getCoords(e.currentTarget)}
               onMouseLeave={() => setCoords(null)}
@@ -32,7 +32,7 @@ export const Navigation = () => {
               >
                 {item}
               </NavStyle.NavLinkStyled>
-            </li>
+            </NavStyle.NavListEl>
           );
         })}
         <NavStyle.LinkBg coords={coords} />

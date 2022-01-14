@@ -11,15 +11,17 @@ const List = styled.ul`
 export const NavList = styled(List)`
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 15px;
   text-transform: uppercase;
   font-size: ${theme.text.medium.fontSize}px;
-  li {
-    padding: 10px;
-  }
   :hover {
     opacity: 1;
   }
+`;
+
+export const NavListEl = styled.li`
+  padding: 10px;
+  color: ${(props) => (props.isActive ? "#000" : "grey")};
 `;
 
 export const NavLinkStyled = styled(NavLink)`
