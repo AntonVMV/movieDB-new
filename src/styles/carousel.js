@@ -7,12 +7,13 @@ import { ContainerL } from "./containers";
 export const Slider = styled.div`
   background-color: black;
   overflow: hidden;
-  height: 550px;
+  height: 650px;
   position: relative;
   display: grid;
   grid-template-rows: 1fr auto;
+  align-items: center;
   @media screen and (max-width: 570px) {
-    height: 450px;
+    height: 500px;
   }
 `;
 
@@ -47,14 +48,12 @@ export const SliderDescription = styled(ContainerL)`
   width: 100%;
   position: relative;
   z-index: 1;
-  padding: 60px 20px;
-  display: ${(props) => (props.active ? "flex" : "none")};
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: ${(props) => (props.active ? "grid" : "none")};
+  row-gap: 32px;
+  justify-items: flex-start;
   box-shadow: none;
-  @media screen and (max-width: 769px) {
-    padding: 60px 20px 20px;
+  @media screen and (max-width: 569px) {
+    row-gap: 20px;
   }
 `;
 
@@ -62,6 +61,9 @@ export const SliderTitle = styled(BigTitle)`
   text-transform: uppercase;
   opacity: 0;
   animation: ${translateLeft} 1s ease forwards;
+  @media screen and (max-width: 569px) {
+    font-size: 22px;
+  }
 `;
 
 export const SliderText = styled(MedText)`
@@ -83,6 +85,9 @@ export const SliderRating = styled.div`
   grid-gap: 5px;
   opacity: 0;
   animation: ${translateLeft} 1s 0.4s ease forwards;
+  @media screen and (max-width: 569px) {
+    font-size: 18px;
+  }
 `;
 
 export const SliderButton = styled(ButtonOk)`
@@ -97,9 +102,11 @@ export const SliderControls = styled.div`
   grid-gap: 30px;
   color: white;
   z-index: 2;
-  left: 50%;
   bottom: 10%;
-  transform: translateX(-50%);
+  left: 9.5%;
+  @media screen and (max-width: 769px) {
+    left: 3%;
+  }
   @media screen and (max-width: 569px) {
     display: none;
   }

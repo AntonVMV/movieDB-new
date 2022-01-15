@@ -6,6 +6,7 @@ import {
 
 const initialState = {
   data: null,
+  pages: 0,
   loading: false,
   error: null,
 };
@@ -22,7 +23,8 @@ export const movieListReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        data: action.payload.results,
+        pages: action.payload.total_pages,
       };
 
     case GET_MOVIES_DATA_FAILURE:

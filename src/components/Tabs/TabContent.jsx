@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import { ContainerL } from "../../styles/containers";
 import { TabList, TabItem, MovieInfo, TabBG, InfoIcon } from "../../styles/tab";
-import { MedTitle, SmallTitle, SmallText } from "../../styles/text";
+import { SmallTitle, SmallText } from "../../styles/text";
 import { SliderRating } from "../../styles/carousel";
 import { AiOutlineStar } from "react-icons/ai";
 
-export const TabContent = () => {
+export const TabContent = ({ children }) => {
   const { data } = useSelector((store) => store.movieListReducer);
   const { genres } = useSelector((store) => store.genresListReducer);
 
@@ -25,8 +25,11 @@ export const TabContent = () => {
     return result.join(", ");
   };
 
+  console.log(children);
+
   return (
     <ContainerL>
+      {children[1]}
       <TabList>
         {data &&
           data.map((item) => {
@@ -58,6 +61,7 @@ export const TabContent = () => {
             );
           })}
       </TabList>
+      {children[0]}
     </ContainerL>
   );
 };

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "./theme";
+import { ContainerL } from "./containers";
 
 //========== search-input ================//
 
@@ -68,4 +69,46 @@ export const ButtonOk = styled.button`
   :active {
     background-color: #cfcfcf;
   }
+`;
+
+/*********SELECT***************/
+
+export const FiltersContainer = styled(ContainerL)`
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  @media screen and (max-width: 769px) {
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+    row-gap: 20px;
+  }
+`;
+
+export const SelectContainer = styled.div`
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 769px) {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+  }
+`;
+
+export const SelectField = styled.div`
+  background-color: lightgrey;
+  padding: 5px 20px;
+  margin-left: 10px;
+  position: relative;
+`;
+
+export const SelectDropdown = styled.div`
+  max-height: 200px;
+  overflow-y: scroll;
+  position: absolute;
+  background-color: lightblue;
+  z-index: 2;
+  top: 40px;
+  right: 0;
+  padding: 0 10px;
+  display: ${(props) => (props.isOpen ? "block" : "none")};
+  transition: 0.3s ease;
 `;

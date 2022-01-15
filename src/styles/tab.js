@@ -3,13 +3,13 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 
 export const TabList = styled.ul`
   list-style: none;
-  padding: 20px;
+  padding: 20px 0;
   background-color: white;
   display: grid;
   row-gap: 40px;
   column-gap: 20px;
   justify-content: space-around;
-  grid-template-columns: repeat(auto-fill, 260px);
+  grid-template-columns: repeat(auto-fill, 270px);
 `;
 
 export const TabItem = styled.li`
@@ -20,15 +20,15 @@ export const TabItem = styled.li`
   cursor: pointer;
   :hover {
     div {
-      -webkit-box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, 0.48);
-      box-shadow: 0px 7px 12px 4px rgba(0, 0, 0, 0.48);
+      -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
     }
   }
 `;
 
 export const TabBG = styled.div`
   background: url(${(props) => props.img}) center center no-repeat;
-  background-size: contain;
+  background-size: cover;
   transition: 0.3s ease;
   display: grid;
   position: relative;
@@ -42,7 +42,7 @@ export const MovieInfo = styled.div`
   overflow: hidden;
   padding: 20px;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 10px;
   justify-items: flex-start;
   transition: 0.5s ease;
   align-content: flex-start;

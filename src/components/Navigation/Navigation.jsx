@@ -1,12 +1,12 @@
 import { ContainerL } from "../../styles/containers";
 import * as NavStyle from "../../styles/navigation";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 const tabs = ["Latest", "Top Rated", "Upcoming", "Discover"];
 
 export const Navigation = () => {
   const [coords, setCoords] = useState(null);
-  const container = useRef();
+  const [active, setActive] = useState(null);
 
   const getCoords = (el) => {
     const { left, top, width } = el.getBoundingClientRect();
@@ -26,6 +26,8 @@ export const Navigation = () => {
               key={index}
               onMouseEnter={(e) => getCoords(e.currentTarget)}
               onMouseLeave={() => setCoords(null)}
+              onClick={() => setActive(item)}
+              isActive={active === item ? true : false}
             >
               <NavStyle.NavLinkStyled
                 to={item === "Latest" ? "/" : item.split(" ").join("")}
