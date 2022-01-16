@@ -24,8 +24,7 @@ const Discover = (props) => {
   });
 
   useEffect(() => {
-    let url =
-      "discover/movie?&language=en-US&page=1&with_watch_monetization_types=flatrate&vote_count.gte=5&include_adult=false&include_video=false";
+    let url = `discover/movie?&language=en-US&page=${props.active}&with_watch_monetization_types=flatrate&vote_count.gte=5&include_adult=false&include_video=false`;
     for (let item in fields) {
       if (fields[item]) {
         url = url.concat(`&${item}=${fields[item]}`);
@@ -33,7 +32,7 @@ const Discover = (props) => {
     }
 
     dispatch(getMoviesRequest(url));
-  }, [fields]);
+  }, [fields, props.active]);
 
   const setValue = (item, key) => {
     setFields({ ...fields, [key]: item });

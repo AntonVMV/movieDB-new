@@ -98,6 +98,7 @@ export const SelectField = styled.div`
   padding: 5px 20px;
   margin-left: 10px;
   position: relative;
+  cursor: pointer;
 `;
 
 export const SelectDropdown = styled.div`
@@ -111,4 +112,19 @@ export const SelectDropdown = styled.div`
   padding: 0 10px;
   display: ${(props) => (props.isOpen ? "block" : "none")};
   transition: 0.3s ease;
+`;
+
+/************PAGINATION**************/
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
+export const PaginationElement = styled.p`
+  padding: 10px 15px;
+  background-color: ${(props) => (props.isPage ? "lightgray" : "transparent")};
+  margin: 10px;
+  cursor: ${(props) => (props.isPage ? "pointer" : "auto")}; ;
 `;

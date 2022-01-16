@@ -12,7 +12,7 @@ const TopRated = (props) => {
     dispatch(
       getMoviesRequest(`movie/top_rated?anguage=en-US&page=${props.active}`)
     );
-  }, []);
+  }, [props.active]);
 
   return (
     <TabContent>

@@ -25,8 +25,6 @@ export const TabContent = ({ children }) => {
     return result.join(", ");
   };
 
-  console.log(children);
-
   return (
     <ContainerL>
       {children[1]}

@@ -12,7 +12,7 @@ const Upcoming = (props) => {
     dispatch(
       getMoviesRequest(`movie/upcoming?language=en-US&page=${props.active}`)
     );
-  }, []);
+  }, [props.active]);
 
   return (
     <TabContent>
