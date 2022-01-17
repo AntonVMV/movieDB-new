@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <HeaderStyled>
       <HeaderContainer>
-        <MainTitle>MOVIES-DB</MainTitle>
+        <MainTitle to="/">MOVIES-DB</MainTitle>
         <SearchElement />
       </HeaderContainer>
     </HeaderStyled>

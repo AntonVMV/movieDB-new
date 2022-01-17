@@ -1,6 +1,13 @@
 import { useSelector } from "react-redux";
 import { ContainerL } from "../../styles/containers";
-import { TabList, TabItem, MovieInfo, TabBG, InfoIcon } from "../../styles/tab";
+import {
+  TabList,
+  TabItem,
+  MovieInfo,
+  TabBG,
+  InfoIcon,
+  NoImgIcon,
+} from "../../styles/tab";
 import { SmallTitle, SmallText } from "../../styles/text";
 import { SliderRating } from "../../styles/carousel";
 import { AiOutlineStar } from "react-icons/ai";
@@ -34,8 +41,13 @@ export const TabContent = ({ children }) => {
             return (
               <TabItem key={item.id}>
                 <TabBG
-                  img={`https://image.tmdb.org/t/p/w780${item.poster_path}`}
+                  img={
+                    item.poster_path
+                      ? `https://image.tmdb.org/t/p/w780${item.poster_path}`
+                      : null
+                  }
                 >
+                  {!item.poster_path && <NoImgIcon />}
                   <InfoIcon />
                   <MovieInfo>
                     <SmallTitle>{item.title}</SmallTitle>

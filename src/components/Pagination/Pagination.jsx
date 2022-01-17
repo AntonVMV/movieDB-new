@@ -48,7 +48,16 @@ export const Pagination = ({ active, onChange }) => {
     return pagesWithDots;
   };
 
-  setPagesNum();
+  const test = (item) => {
+    window.scrollTo({
+      left: 0,
+      top: 500,
+      behavior: "smooth",
+    });
+    if (typeof item === "number") {
+      onChange(item);
+    }
+  };
 
   return (
     <PaginationContainer>
@@ -57,8 +66,9 @@ export const Pagination = ({ active, onChange }) => {
           return (
             <PaginationElement
               key={index}
-              onClick={typeof item === "number" ? () => onChange(item) : null}
+              onClick={() => test(item)}
               isPage={typeof item === "number"}
+              isActive={parseInt(active) === item}
             >
               {item}
             </PaginationElement>

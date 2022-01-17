@@ -1,7 +1,10 @@
 import { theme } from "./theme";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const MainTitle = styled.h2`
+export const MainTitle = styled(Link)`
+  color: #fff;
+  text-decoration: none;
   margin: 0;
   padding: 0;
   font-size: ${theme.title.large.fontSize}px;

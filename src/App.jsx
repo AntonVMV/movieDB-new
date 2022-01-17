@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
 import { DiscoverWithPages } from "./components/Tabs/Discover/Discover";
@@ -12,10 +12,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route index element={<LatestWithPages />}></Route>
-          <Route path="TopRated" element={<TopRatedWithPages />}></Route>
-          <Route path="Upcoming" element={<UpcomingWithPages />}></Route>
-          <Route path="Discover" element={<DiscoverWithPages />}></Route>
+          <Route path="/" element={<Navigate to="/Latest" />} />
+          <Route path="Latest" element={<LatestWithPages />} />
+          <Route path="TopRated" element={<TopRatedWithPages />} />
+          <Route path="Upcoming" element={<UpcomingWithPages />} />
+          <Route path="Discover" element={<DiscoverWithPages />} />
         </Route>
       </Routes>
     </BrowserRouter>

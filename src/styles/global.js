@@ -12,7 +12,7 @@ export const Global = createGlobalStyle`
     }
 
     body{
-        background-color: ${theme.colors.secondary};
+        background-color: ${theme.colors.primary};
         overflow-y: scroll;
     }
 `;

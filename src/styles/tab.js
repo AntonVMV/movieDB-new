@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { theme } from "./theme";
+import { MdOutlineImageNotSupported } from "react-icons/md";
 
 export const TabList = styled.ul`
   list-style: none;
   padding: 20px 0;
-  background-color: white;
+  background-color: ${theme.colors.primary};
   display: grid;
   row-gap: 40px;
   column-gap: 20px;
@@ -64,4 +66,11 @@ export const InfoIcon = styled(AiOutlineInfoCircle)`
       transform: translateY(0);
     }
   }
+`;
+
+export const NoImgIcon = styled(MdOutlineImageNotSupported)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: lightgray;
 `;

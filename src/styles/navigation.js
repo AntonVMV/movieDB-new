@@ -30,6 +30,7 @@ export const NavLinkStyled = styled(NavLink)`
   transition: 0.3s ease;
   &.active {
     color: black;
+    pointer-events: none;
   }
 `;
 

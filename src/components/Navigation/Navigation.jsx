@@ -29,9 +29,7 @@ export const Navigation = () => {
               onClick={() => setActive(item)}
               isActive={active === item ? true : false}
             >
-              <NavStyle.NavLinkStyled
-                to={item === "Latest" ? "/" : item.split(" ").join("")}
-              >
+              <NavStyle.NavLinkStyled to={item.split(" ").join("")}>
                 {item}
               </NavStyle.NavLinkStyled>
             </NavStyle.NavListEl>
