@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Pages/Home/Home";
-import { Search } from "./components/Pages/Search/Search";
+import { SearchWithPages } from "./components/Pages/Search/Search";
 import { DiscoverWithPages } from "./components/Tabs/Discover/Discover";
 import { LatestWithPages } from "./components/Tabs/Latest/Latest";
 import { TopRatedWithPages } from "./components/Tabs/TopRated/TopRated";
@@ -19,7 +19,7 @@ function App() {
           <Route path="Upcoming" element={<UpcomingWithPages />} />
           <Route path="Discover" element={<DiscoverWithPages />} />
         </Route>
-        <Route path="Search" element={<Search />} />
+        <Route path="Search" element={<SearchWithPages />} />
       </Routes>
     </BrowserRouter>
   );
