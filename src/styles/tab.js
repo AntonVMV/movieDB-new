@@ -10,7 +10,7 @@ export const TabList = styled.ul`
   display: grid;
   row-gap: 40px;
   column-gap: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
   grid-template-columns: repeat(auto-fill, 270px);
 `;
 

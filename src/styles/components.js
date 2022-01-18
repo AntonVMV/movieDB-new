@@ -20,9 +20,11 @@ export const SearchInput = styled.div`
     padding: ${(props) => (props.isActive ? `0 30px 0 20px` : `0px`)};
     right: 0;
     transition: 0.3s ease;
-
     :focus {
       outline: none;
+    }
+    @media screen and (max-width: 550px) {
+      max-width: 80vw;
     }
   }
 `;

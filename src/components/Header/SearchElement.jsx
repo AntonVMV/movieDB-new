@@ -7,8 +7,7 @@ import { useState, useRef, useEffect } from "react";
 import { AiOutlineSearch, AiOutlineEnter } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
-export const SearchElement = () => {
-  const [isActive, setActive] = useState(false);
+export const SearchElement = ({ isActive, setActive }) => {
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
 
@@ -30,6 +29,9 @@ export const SearchElement = () => {
   };
 
   const submitHandler = () => {
+    if (!inputValue) {
+      return;
+    }
     navigate({ pathname: "Search", search: "for=" + inputValue });
     closeInput();
   };

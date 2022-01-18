@@ -13,7 +13,7 @@ import { SliderRating } from "../../styles/carousel";
 import { AiOutlineStar } from "react-icons/ai";
 
 export const TabContent = ({ children }) => {
-  const { data } = useSelector((store) => store.movieListReducer);
+  const { loading, data } = useSelector((store) => store.movieListReducer);
   const { genres } = useSelector((store) => store.genresListReducer);
 
   const strSlice = (str) => {

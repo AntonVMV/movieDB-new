@@ -10,6 +10,10 @@ export const MainTitle = styled(Link)`
   font-size: ${theme.title.large.fontSize}px;
   font-weight: ${theme.title.large.fontWeigth};
   background-color: transparent;
+  transition: 0.3s ease;
+  @media screen and (max-width: 550px) {
+    opacity: ${(props) => (props.open ? "0" : "1")};
+  }
 `;
 
 export const BigTitle = styled.h3`

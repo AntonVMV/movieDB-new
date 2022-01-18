@@ -21,3 +21,11 @@ export const HeaderContainer = styled(ContainerL)`
     padding: 15px 20px;
   }
 `;
+
+export const SearchResultsHeader = styled.div`
+  padding: 85px 0 15px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+  align-items: baseline;
+`;

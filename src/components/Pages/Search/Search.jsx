@@ -5,22 +5,29 @@ import { getMoviesRequest } from "../../../store/movieListData/thunk";
 import { withPage } from "../../../hoc/WithPage";
 import { Pagination } from "../../Pagination/Pagination";
 import { TabContent } from "../../Tabs/TabContent";
+import { SearchResultsHeader } from "../../../styles/containers";
+import { MedTitle, MedText } from "../../../styles/text";
 
 const Search = (props) => {
   const [search] = useQueryParams("for");
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMoviesRequest(``));
+    dispatch(
+      getMoviesRequest(
+        `search/movie?query=${search}&language=en-US&page=${props.active}&include_adult=false`
+      )
+    );
   }, [props.active, search]);
-
-  console.log(search);
 
   return (
     <>
       <TabContent>
         <Pagination active={props.active} />
-        <div style={{ padding: "300px" }}>NO RESULTS</div>
+        <SearchResultsHeader>
+          <MedText>Search results for</MedText>
+          <MedTitle>"{search}"</MedTitle>
+        </SearchResultsHeader>
       </TabContent>
     </>
   );
