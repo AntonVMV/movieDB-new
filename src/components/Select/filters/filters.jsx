@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Select } from "../Select";
 import { useQueryParams } from "../../../hook/useQueryParams";
@@ -7,14 +6,7 @@ import { useQueryParams } from "../../../hook/useQueryParams";
 
 export const GenreFilter = () => {
   const { genres } = useSelector((store) => store.genresListReducer);
-  const [genre, setGenre] = useState({ with_genres: "" });
-  const [paramValue, setValue] = useQueryParams("with_genres");
-
-  useEffect(() => {
-    if (genre.with_genres) {
-      setValue(genre.with_genres);
-    }
-  }, [genre]);
+  const [paramValue] = useQueryParams("with_genres");
 
   const getActiveName = () => {
     return genres.find((item) => item.id === parseInt(paramValue))?.name;
@@ -26,8 +18,8 @@ export const GenreFilter = () => {
         <Select
           active={getActiveName()}
           options={genres}
-          onChange={(item) => setGenre({ with_genres: item })}
-          label={"Genre:"}
+          label={"Genre"}
+          query="with_genres"
         />
       )}
     </>
@@ -37,14 +29,7 @@ export const GenreFilter = () => {
 /*Select. filter by release year*/
 
 export const YearFilter = () => {
-  const [year, setYear] = useState({ primary_release_year: "" });
-  const [paramValue, setValue] = useQueryParams("primary_release_year");
-
-  useEffect(() => {
-    if (year.primary_release_year) {
-      setValue(year.primary_release_year);
-    }
-  }, [year]);
+  const [paramValue] = useQueryParams("primary_release_year");
 
   const generateYears = () => {
     const currentYear = new Date().getFullYear();
@@ -57,12 +42,14 @@ export const YearFilter = () => {
     return years.reverse();
   };
 
+  console.log(paramValue);
+
   return (
     <Select
       active={paramValue}
       options={generateYears()}
-      onChange={(item) => setYear({ primary_release_year: item })}
-      label={"Year:"}
+      label={"Year"}
+      query="primary_release_year"
     />
   );
 };
@@ -70,14 +57,7 @@ export const YearFilter = () => {
 /*Select. filter by sort option*/
 
 export const SortFilter = () => {
-  const [sort, setSort] = useState({ sort_by: "" });
-  const [paramValue, setValue] = useQueryParams("sort_by");
-
-  useEffect(() => {
-    if (sort.sort_by) {
-      setValue(sort.sort_by);
-    }
-  }, [sort]);
+  const [paramValue] = useQueryParams("sort_by");
 
   const sortTypes = [
     { name: "Release Date", id: "release_date.desc" },
@@ -93,8 +73,8 @@ export const SortFilter = () => {
     <Select
       active={getActiveName()}
       options={sortTypes}
-      onChange={(item) => setSort({ sort_by: item })}
-      label={"Sort:"}
+      label={"Sort"}
+      query="sort_by"
     />
   );
 };

@@ -23,7 +23,7 @@ const Latest = (props) => {
   return (
     <>
       <TabContent>
-        <Pagination active={props.active} onChange={props.onChange} />
+        <Pagination active={props.active} />
         <FiltersContainer>
           <GenreFilter />
         </FiltersContainer>

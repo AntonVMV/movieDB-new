@@ -2,6 +2,7 @@ import styled, { css, keyframes } from "styled-components";
 import { theme } from "./theme";
 import { ContainerL } from "./containers";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 //========== search-input ================//
 
@@ -24,32 +25,51 @@ export const SearchInput = styled.div`
       outline: none;
     }
   }
+`;
 
-  button {
-    color: black;
-    background-color: white;
-    height: 30px;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    cursor: pointer;
-    z-index: 2;
-    border: none;
-    transition: 0.3s ease;
-    :hover {
-      -webkit-box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.6);
-      box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.6);
-    }
-    :focus {
-      outline: none;
-    }
+export const SearchButton = styled.button`
+  opacity: ${(props) => (props.isShow ? "0" : "1")};
+  ${(props) =>
+    props.isShow
+      ? css`
+          opacity: 0;
+          z-index: -1;
+        `
+      : css`
+          opacity: 1;
+          z-index: 2;
+        `};
+  color: black;
+  display: flex;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+  :hover {
+    -webkit-box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.6);
+  }
+  :focus {
+    outline: none;
+  }
+  .searh-icon {
+    width: 20px;
+    height: 20px;
+  }
+`;
 
-    .searh-icon {
-      width: 20px;
-      height: 20px;
-    }
+export const EnterButton = styled(Link)`
+  z-index: 3;
+  position: absolute;
+  color: black;
+  transition: 0.2s ease;
+  :hover {
+    transform: scale(120%);
   }
 `;
 
@@ -78,39 +98,41 @@ export const FiltersContainer = styled(ContainerL)`
   padding: 20px 0;
   display: grid;
   grid-gap: 20px;
-  justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, 220px);
+  grid-template-columns: repeat(auto-fill, 200px);
 `;
 
 export const SelectContainer = styled.div`
   display: grid;
   align-items: center;
-  grid-template-columns: minmax(50px, auto) 1fr;
 `;
 
 export const SelectField = styled.div`
-  background-color: #e8e8e8;
-  padding: 5px 20px;
+  padding: 5px 5px 5px 15px;
+  border: 1px solid #b3b3b3;
   border-radius: 6px;
-  margin-left: 10px;
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.3s ease;
+  :hover {
+    border: 1px solid black;
+  }
 `;
 
 export const SelectDropdown = styled.div`
   width: 100%;
   overflow: auto;
   position: absolute;
-  background-color: #e8e8e8;
-  top: 36px;
+  background-color: #fafafa;
+  top: 43px;
   right: 0;
   max-height: 200px;
   border-radius: 6px;
   opacity: 0;
-
+  -webkit-box-shadow: 0px 0px 8px -2px rgba(0, 0, 0, 0.69);
+  box-shadow: 0px 0px 8px -2px rgba(0, 0, 0, 0.69);
   ${(props) =>
     props.isOpen
       ? css`
@@ -176,12 +198,14 @@ export const PaginationElement = styled.p`
     props.isPage
       ? css`
           cursor: pointer;
-          border: 1px solid #e8e8e8;
+          border: 1px solid #b3b3b3;
           :hover {
-            background-color: #e8e8e8;
+            border-color: #000;
           }
         `
-      : null}
+      : css`
+          pointer-events: none;
+        `}
   margin: 10px;
   border-radius: 6px;
 `;

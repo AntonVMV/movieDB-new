@@ -1,21 +1,28 @@
-import { SearchInput } from "../../styles/components";
-import { useState, useRef } from "react";
-import { AiOutlineSearch } from "react-icons/ai";
+import {
+  SearchInput,
+  SearchButton,
+  EnterButton,
+} from "../../styles/components";
+import { useState, useRef, useEffect } from "react";
+import { AiOutlineSearch, AiOutlineEnter } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 export const SearchElement = () => {
-  let [isActive, setActive] = useState(false);
-  let [inputValue, setInputValue] = useState("");
+  const [isActive, setActive] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
 
+  /*Closing input on outside click*/
   const textInput = useRef(null);
-
-  const searchHandler = () => {
-    if (inputValue) {
-      submitHandler();
-      return;
-    }
-    setActive(!isActive);
-    textInput.current.focus();
-  };
+  useEffect(() => {
+    const onClick = (e) => {
+      if (textInput.current && !textInput.current.contains(e.target)) {
+        closeInput();
+      }
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
 
   const closeInput = (e) => {
     setInputValue("");
@@ -23,26 +30,29 @@ export const SearchElement = () => {
   };
 
   const submitHandler = () => {
-    console.log(inputValue);
-  };
-
-  const helper = (e) => {
-    e.preventDefault();
+    navigate({ pathname: "Search", search: "for=" + inputValue });
+    closeInput();
   };
 
   return (
-    <SearchInput isActive={isActive}>
+    <SearchInput isActive={isActive} ref={textInput}>
       <input
         type="text"
-        ref={textInput}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyPress={(e) => (e.key === "Enter" ? submitHandler() : null)}
-        onBlur={closeInput}
       />
-      <button onClick={searchHandler} onMouseDown={helper}>
+      <SearchButton isShow={isActive} onClick={() => setActive(true)}>
         <AiOutlineSearch className="searh-icon" />
-      </button>
+      </SearchButton>
+      {inputValue && (
+        <EnterButton
+          to={{ pathname: "Search", search: "for=" + inputValue }}
+          onClick={submitHandler}
+        >
+          <AiOutlineEnter />
+        </EnterButton>
+      )}
     </SearchInput>
   );
 };

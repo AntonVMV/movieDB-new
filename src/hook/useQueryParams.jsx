@@ -5,11 +5,17 @@ export const useQueryParams = (key) => {
   let paramValue = searchParams.get(key);
 
   let setValue = (value) => {
+    if (value.toString() === paramValue) {
+      return;
+    }
+
     let newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.set(key, value);
+
     if (key !== "page") {
-      newSearchParams.set(`page`, "1");
+      newSearchParams.set("page", 1);
     }
+
     setSearchParams(newSearchParams);
   };
 

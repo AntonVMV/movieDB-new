@@ -10,7 +10,7 @@ export const TabList = styled.ul`
   display: grid;
   row-gap: 40px;
   column-gap: 20px;
-  justify-content: space-around;
+  justify-content: space-between;
   grid-template-columns: repeat(auto-fill, 270px);
 `;
 
@@ -22,8 +22,8 @@ export const TabItem = styled.li`
   cursor: pointer;
   :hover {
     div {
-      -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
-      box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.69);
+      box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.69);
     }
   }
 `;

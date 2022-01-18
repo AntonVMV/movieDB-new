@@ -1,11 +1,14 @@
 import { useSelector } from "react-redux";
+import { useQueryParams } from "../../hook/useQueryParams";
 import {
   PaginationContainer,
   PaginationElement,
 } from "../../styles/components";
 
-export const Pagination = ({ active, onChange }) => {
+export const Pagination = ({ active }) => {
   const { pages } = useSelector((store) => store.movieListReducer);
+  const [_, setSearch] = useQueryParams("page");
+
   let length = pages;
 
   if (pages > 100) {
@@ -48,15 +51,13 @@ export const Pagination = ({ active, onChange }) => {
     return pagesWithDots;
   };
 
-  const test = (item) => {
+  const pageHandle = (item) => {
     window.scrollTo({
       left: 0,
       top: 500,
       behavior: "smooth",
     });
-    if (typeof item === "number") {
-      onChange(item);
-    }
+    setSearch(item);
   };
 
   return (
@@ -66,7 +67,7 @@ export const Pagination = ({ active, onChange }) => {
           return (
             <PaginationElement
               key={index}
-              onClick={() => test(item)}
+              onClick={() => pageHandle(item)}
               isPage={typeof item === "number"}
               isActive={parseInt(active) === item}
             >
