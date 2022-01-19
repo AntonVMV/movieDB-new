@@ -1,4 +1,4 @@
-import { TabContent } from "../TabContent";
+import { TabsContent } from "../TabsContent";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getMoviesRequest } from "../../../store/movieListData/thunk";
@@ -22,12 +22,12 @@ const Latest = (props) => {
 
   return (
     <>
-      <TabContent>
+      <TabsContent>
         <Pagination active={props.active} />
         <FiltersContainer>
           <GenreFilter />
         </FiltersContainer>
-      </TabContent>
+      </TabsContent>
     </>
   );
 };

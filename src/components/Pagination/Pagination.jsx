@@ -47,7 +47,6 @@ export const Pagination = ({ active }) => {
       last = result[i];
       pagesWithDots.push(result[i]);
     }
-
     return pagesWithDots;
   };
 
@@ -62,19 +61,20 @@ export const Pagination = ({ active }) => {
 
   return (
     <PaginationContainer>
-      {pages &&
-        setPagesNum().map((item, index) => {
-          return (
-            <PaginationElement
-              key={index}
-              onClick={() => pageHandle(item)}
-              isPage={typeof item === "number"}
-              isActive={parseInt(active) === item}
-            >
-              {item}
-            </PaginationElement>
-          );
-        })}
+      {pages
+        ? setPagesNum().map((item, index) => {
+            return (
+              <PaginationElement
+                key={index}
+                onClick={() => pageHandle(item)}
+                isPage={typeof item === "number"}
+                isActive={parseInt(active) === item}
+              >
+                {item}
+              </PaginationElement>
+            );
+          })
+        : null}
     </PaginationContainer>
   );
 };

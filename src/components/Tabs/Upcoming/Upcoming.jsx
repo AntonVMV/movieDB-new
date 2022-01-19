@@ -1,4 +1,4 @@
-import { TabContent } from "../TabContent";
+import { TabsContent } from "../TabsContent";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getMoviesRequest } from "../../../store/movieListData/thunk";
@@ -15,10 +15,10 @@ const Upcoming = (props) => {
   }, [props.active]);
 
   return (
-    <TabContent>
+    <TabsContent>
       <Pagination active={props.active} />
       <div></div>
-    </TabContent>
+    </TabsContent>
   );
 };
 

@@ -1,4 +1,4 @@
-import { TabContent } from "../TabContent";
+import { TabsContent } from "../TabsContent";
 import { useDispatch } from "react-redux";
 import { FiltersContainer } from "../../../styles/components";
 import { useEffect } from "react";
@@ -25,14 +25,14 @@ const Discover = (props) => {
   }, [searchParams]);
 
   return (
-    <TabContent>
+    <TabsContent>
       <Pagination active={props.active} />
       <FiltersContainer>
         <GenreFilter />
         <YearFilter />
         <SortFilter />
       </FiltersContainer>
-    </TabContent>
+    </TabsContent>
   );
 };
 

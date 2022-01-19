@@ -1,7 +1,7 @@
 import { HeaderContainer } from "../../styles/containers";
 import { MainTitle } from "../../styles/text";
 import { SearchElement } from "./SearchElement";
-import { HeaderStyled } from "../../styles/header";
+import { HeaderStyled } from "../../styles/pageComponents";
 import { useState } from "react";
 
 export const Header = () => {

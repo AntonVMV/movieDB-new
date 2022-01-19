@@ -188,6 +188,7 @@ export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 0 0 10px;
 `;
 
 export const PaginationElement = styled.p`

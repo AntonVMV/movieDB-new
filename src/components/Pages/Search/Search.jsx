@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { getMoviesRequest } from "../../../store/movieListData/thunk";
 import { withPage } from "../../../hoc/WithPage";
 import { Pagination } from "../../Pagination/Pagination";
-import { TabContent } from "../../Tabs/TabContent";
+import { TabsContent } from "../../Tabs/TabsContent";
 import { SearchResultsHeader } from "../../../styles/containers";
 import { MedTitle, MedText } from "../../../styles/text";
 
@@ -22,13 +22,13 @@ const Search = (props) => {
 
   return (
     <>
-      <TabContent>
+      <TabsContent>
         <Pagination active={props.active} />
         <SearchResultsHeader>
           <MedText>Search results for</MedText>
           <MedTitle>"{search}"</MedTitle>
         </SearchResultsHeader>
-      </TabContent>
+      </TabsContent>
     </>
   );
 };

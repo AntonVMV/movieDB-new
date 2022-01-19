@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Footer } from "../components/Footer/Footer";
 
 export const ContainerL = styled.div`
   max-width: 80vw;
@@ -8,6 +9,10 @@ export const ContainerL = styled.div`
     max-width: 100vw;
     padding: 0 20px;
   }
+`;
+
+export const ContentContainer = styled(ContainerL)`
+  min-height: 90vh;
 `;
 
 export const HeaderContainer = styled(ContainerL)`
@@ -28,4 +33,19 @@ export const SearchResultsHeader = styled.div`
   grid-template-columns: auto 1fr;
   grid-gap: 10px;
   align-items: baseline;
+`;
+
+export const FooterContainer = styled(ContainerL)`
+  padding: 20px 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  @media screen and (max-width: 756px) {
+    padding: 20px 20px;
+  }
+`;
+
+export const DetailsContainer = styled(ContainerL)`
+  padding-top: 70px;
+  height: 100%;
 `;

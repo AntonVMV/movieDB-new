@@ -42,8 +42,6 @@ export const YearFilter = () => {
     return years.reverse();
   };
 
-  console.log(paramValue);
-
   return (
     <Select
       active={paramValue}

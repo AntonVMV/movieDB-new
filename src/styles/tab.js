@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { theme } from "./theme";
 import { MdOutlineImageNotSupported } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export const TabList = styled.ul`
   list-style: none;
@@ -14,7 +15,9 @@ export const TabList = styled.ul`
   grid-template-columns: repeat(auto-fill, 270px);
 `;
 
-export const TabItem = styled.li`
+export const TabItem = styled(Link)`
+  text-decoration: none;
+  color: black;
   display: grid;
   grid-template-rows: 390px auto;
   grid-gap: 20px;
@@ -53,6 +56,7 @@ export const MovieInfo = styled.div`
 
 export const InfoIcon = styled(AiOutlineInfoCircle)`
   background-color: white;
+  color: black;
   height: 30px;
   width: 30px;
   position: absolute;
@@ -73,4 +77,8 @@ export const NoImgIcon = styled(MdOutlineImageNotSupported)`
   width: 100%;
   height: 100%;
   color: lightgray;
+`;
+
+export const NoResultsContainer = styled.div`
+  padding: 20px 0;
 `;
