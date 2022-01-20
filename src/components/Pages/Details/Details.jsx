@@ -26,26 +26,28 @@ export const Details = () => {
 
   return (
     <DetailsContainer>
-      <InfoContainer>
-        <PosterImg
-          img={
-            data.poster_path
-              ? `https://image.tmdb.org/t/p/w780${data.poster_path}`
-              : null
-          }
-        />
-        <Information>
-          <li>Title</li>
-          <li>Name</li>
-          <li>Tagline</li>
-          <li>Genres</li>
-          <li>Director</li>
-          <li>Producer</li>
-          <li>Screenplay</li>
-          <li>Original Music Composer</li>
-          <li>Director of Photography</li>
-        </Information>
-      </InfoContainer>
+      {data && (
+        <InfoContainer>
+          <PosterImg
+            img={
+              data.poster_path
+                ? `https://image.tmdb.org/t/p/w780${data.poster_path}`
+                : null
+            }
+          />
+          <Information>
+            <li>Title</li>
+            <li>Name</li>
+            <li>Tagline</li>
+            <li>Genres</li>
+            <li>Director</li>
+            <li>Producer</li>
+            <li>Screenplay</li>
+            <li>Original Music Composer</li>
+            <li>Director of Photography</li>
+          </Information>
+        </InfoContainer>
+      )}
     </DetailsContainer>
   );
 };
