@@ -14,6 +14,7 @@ import {
   SliderDot,
 } from "../../styles/carousel";
 import { AiOutlineStar, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export const Carousel = () => {
   const dispatch = useDispatch();
@@ -47,8 +48,6 @@ export const Carousel = () => {
     }
     setCurrent(index);
   };
-
-  const buttonHandler = (e) => {};
 
   const sliceString = (text) => {
     if (text.length > 300) {
@@ -95,7 +94,11 @@ export const Carousel = () => {
                   <AiOutlineStar size="1.5em" />
                   {item.vote_average}
                 </SliderRating>
-                <SliderButton onClick={buttonHandler}>Continue</SliderButton>
+                <SliderButton
+                  to={{ pathname: "/Details", search: `id=${item.id}` }}
+                >
+                  Continue
+                </SliderButton>
               </SliderDescription>
 
               <Slide

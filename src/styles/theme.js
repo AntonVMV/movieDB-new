@@ -6,6 +6,9 @@ export const theme = {
     small: {
       fontSize: 14,
     },
+    xsmall: {
+      fontSize: 10,
+    },
   },
   title: {
     xlarge: {

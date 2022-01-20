@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { theme } from "./theme";
-import { MdOutlineImageNotSupported } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export const TabList = styled.ul`
@@ -33,7 +32,16 @@ export const TabItem = styled(Link)`
 
 export const TabBG = styled.div`
   background: url(${(props) => props.img}) center center no-repeat;
-  background-size: cover;
+  ${(props) =>
+    props.img
+      ? css`
+          background: url(props => props.img) center center no-repeat;
+          background-size: cover;
+        `
+      : css`
+          background: url("./img/no-image.png") center center no-repeat;
+          background-size: contain;
+        `}
   transition: 0.3s ease;
   display: grid;
   position: relative;
@@ -70,13 +78,6 @@ export const InfoIcon = styled(AiOutlineInfoCircle)`
       transform: translateY(0);
     }
   }
-`;
-
-export const NoImgIcon = styled(MdOutlineImageNotSupported)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  color: lightgray;
 `;
 
 export const NoResultsContainer = styled.div`

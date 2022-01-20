@@ -3,17 +3,14 @@ import { ContentContainer } from "../../styles/containers";
 import { TabInfo } from "./TabInfo";
 import { TabList } from "../../styles/tab";
 import { NoResultsContainer } from "../../styles/tab";
-import { MedText, MedTitle } from "../../styles/text";
+import { MedText } from "../../styles/text";
+import { Loading } from "./Loading";
 
 export const TabsContent = ({ children }) => {
   const { loading, data } = useSelector((store) => store.movieListReducer);
 
   if (loading) {
-    return (
-      <ContentContainer>
-        <MedTitle>Loading...</MedTitle>
-      </ContentContainer>
-    );
+    return <Loading />;
   }
 
   return (

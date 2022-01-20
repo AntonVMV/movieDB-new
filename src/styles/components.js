@@ -77,7 +77,8 @@ export const EnterButton = styled(Link)`
 
 /*=================Button-OK=================*/
 
-export const ButtonOk = styled.button`
+export const ButtonOk = styled(Link)`
+  text-decoration: none;
   color: ${theme.colors.text};
   background-color: ${theme.colors.primary};
   padding: 10px 20px;
@@ -211,4 +212,21 @@ export const PaginationElement = styled.p`
         `}
   margin: 10px;
   border-radius: 6px;
+`;
+
+/*Loading*/
+
+export const LoadingBlock = styled.div`
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  font-weight: 600;
+  font-size: 30px;
+  color: #7a7a7a;
 `;

@@ -5,7 +5,7 @@ export const ContainerL = styled.div`
   max-width: 80vw;
   margin: 0 auto;
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 950px) {
     max-width: 100vw;
     padding: 0 20px;
   }

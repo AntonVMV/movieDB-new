@@ -1,10 +1,4 @@
-import {
-  TabItem,
-  TabBG,
-  NoImgIcon,
-  InfoIcon,
-  MovieInfo,
-} from "../../styles/tab";
+import { TabItem, TabBG, InfoIcon, MovieInfo } from "../../styles/tab";
 import { SliderRating } from "../../styles/carousel";
 import { useSelector } from "react-redux";
 import { SmallTitle, SmallText } from "../../styles/text";
@@ -29,15 +23,10 @@ export const TabInfo = ({ item }) => {
     return result.join(", ");
   };
 
-  const test = () => {
-    console.log("click");
-  };
-
   return (
     <li>
       <TabItem
         key={item.id}
-        onClick={test}
         to={{ pathname: "/Details", search: `id=${item.id}` }}
       >
         <TabBG
@@ -47,7 +36,6 @@ export const TabInfo = ({ item }) => {
               : null
           }
         >
-          {!item.poster_path && <NoImgIcon />}
           <InfoIcon />
           <MovieInfo>
             <SmallTitle>{item.title}</SmallTitle>

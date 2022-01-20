@@ -44,3 +44,7 @@ export const MedText = styled.p`
 export const SmallText = styled.p`
   font-size: ${theme.text.small.fontSize}px;
 `;
+
+export const XSmallText = styled.p`
+  font-size: ${theme.text.xsmall.fontSize}px;
+`;
