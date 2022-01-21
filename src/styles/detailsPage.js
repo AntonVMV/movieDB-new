@@ -1,11 +1,16 @@
 import styled from "styled-components";
 import { TabBG } from "./tab";
+import { BsPlayCircle } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-export const InfoContainer = styled.div`
+export const BlockContainer = styled.div`
+  padding: 15px 0;
+`;
+
+export const InfoContainer = styled(BlockContainer)`
   display: grid;
   grid-template-columns: auto 1fr 300px;
   grid-gap: 50px;
-  margin: 15px 0;
   @media screen and (max-width: 1300px) {
     grid-template-columns: auto 1fr;
   }
@@ -40,11 +45,12 @@ export const InformationItem = styled.li`
   align-items: flex-end;
 `;
 
-export const AboutItem = styled.div`
-  padding: 10px 0 0;
+export const AboutItem = styled(BlockContainer)`
   display: grid;
   row-gap: 10px;
 `;
+
+/*Trailers Container*/
 
 export const SideContainer = styled.div`
   display: grid;
@@ -64,8 +70,9 @@ export const SideContainer = styled.div`
 
 export const VideoContainer = styled.div`
   overflow-y: auto;
-  display: grid;
-  row-gap: 10px;
+  display: flex;
+  padding: 0 10px;
+  flex-direction: column;
   ::-webkit-scrollbar {
     width: 7px;
     background-color: transparent;
@@ -79,17 +86,8 @@ export const VideoContainer = styled.div`
     border-radius: 10px;
     background-color: #f9f9fd;
   }
-  img {
-    padding: 10px;
-    width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-  }
   @media screen and (max-width: 1300px) {
-    display: flex;
-    img {
-      width: 300px;
-    }
+    flex-direction: row;
     ::-webkit-scrollbar {
       height: 5px;
       background-color: transparent;
@@ -97,11 +95,38 @@ export const VideoContainer = styled.div`
   }
 `;
 
-/*Actor Cards*/
-
-export const CastContainer = styled.div`
-  padding: 20px 0;
+export const TrailerImage = styled.div`
+  background: ${(props) => `url(${props.url}) center center no-repeat`};
+  min-height: 200px;
+  background-size: cover;
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 1300px) {
+    width: 300px;
+    margin: 0 10px;
+  }
 `;
+
+export const PlayImg = styled(BsPlayCircle)`
+  width: 100%;
+  height: 100%;
+  padding: 70px;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: 0.3s ease;
+  :hover {
+    opacity: 1;
+  }
+`;
+
+/*Actor Cards*/
 
 export const ActorsContainer = styled.div`
   margin: 10px 0;
@@ -124,15 +149,42 @@ export const ActorsContainer = styled.div`
   }
 `;
 
-export const ActorCard = styled.div`
+export const ActorCard = styled(Link)`
+  text-decoration: none;
+  color: #000;
   padding: 0 10px;
   display: grid;
   p {
     max-width: 100px;
+  }
+  :hover {
+    text-decoration: underline;
+    div {
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.69);
+      box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.69);
+    }
   }
 `;
 
 export const ActorImg = styled(TabBG)`
   width: 100px;
   height: 150px;
+`;
+
+/*Recommend*/
+
+export const RecContainer = styled(ActorsContainer)`
+  background-color: #fff;
+  p {
+    max-width: 200px;
+  }
+`;
+
+export const RecImg = styled(TabBG)`
+  width: 200px;
+  height: 300px;
+`;
+
+export const RecCard = styled(ActorCard)`
+  row-gap: 10px;
 `;

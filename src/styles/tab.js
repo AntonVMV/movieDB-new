@@ -73,6 +73,7 @@ export const InfoIcon = styled(AiOutlineInfoCircle)`
   right: 0;
   border-radius: 0 0 0 5px;
   z-index: 1;
+  cursor: auto;
   :hover {
     + div {
       transform: translateY(0);

@@ -2,19 +2,19 @@ import {
   ActorImg,
   ActorCard,
   ActorsContainer,
-  CastContainer,
+  BlockContainer,
 } from "../../../styles/detailsPage";
 import { SmallText, XSmallText, SmallTitle } from "../../../styles/text";
 
 export const MovieCast = ({ cast }) => {
   return (
-    <CastContainer>
+    <BlockContainer>
       <SmallTitle>Cast:</SmallTitle>
 
       <ActorsContainer>
         {cast.slice(0, 15).map((item) => {
           return (
-            <ActorCard key={item.id}>
+            <ActorCard key={item.id} to="/">
               <ActorImg
                 img={
                   item.profile_path
@@ -30,6 +30,6 @@ export const MovieCast = ({ cast }) => {
           );
         })}
       </ActorsContainer>
-    </CastContainer>
+    </BlockContainer>
   );
 };

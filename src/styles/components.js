@@ -3,6 +3,7 @@ import { theme } from "./theme";
 import { ContainerL } from "./containers";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai";
 
 //========== search-input ================//
 
@@ -229,4 +230,73 @@ export const LoadingBlock = styled.div`
   font-weight: 600;
   font-size: 30px;
   color: #7a7a7a;
+`;
+
+/*MODAL*/
+
+export const ModalBG = styled.div`
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const test = keyframes`
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+`;
+
+export const ModalContainer = styled.div`
+  background-color: #fff;
+  position: relative;
+  width: 69%;
+  padding-top: 40%;
+
+  z-index: 21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ${test} 0.2s forwards linear;
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  @media screen and (max-width: 760px) {
+    width: 100%;
+    padding-top: 60%;
+  }
+`;
+
+export const CloseIcon = styled(AiOutlineClose)`
+  color: #fff;
+  z-index: 22;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  border-radius: 100%;
+  padding: 2px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  @media screen and (max-width: 760px) {
+    top: -40px;
+    right: 10px;
+  }
+  :hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 `;

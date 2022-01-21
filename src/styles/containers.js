@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Footer } from "../components/Footer/Footer";
 
 export const ContainerL = styled.div`
   max-width: 80vw;
@@ -22,7 +21,7 @@ export const HeaderContainer = styled(ContainerL)`
   padding: 15px 0;
   align-items: center;
   z-index: 3;
-  @media screen and (max-width: 769px) {
+  @media screen and (max-width: 950px) {
     padding: 15px 20px;
   }
 `;
@@ -46,6 +45,8 @@ export const FooterContainer = styled(ContainerL)`
 `;
 
 export const DetailsContainer = styled(ContainerL)`
-  padding-top: 70px;
-  height: 100%;
+  padding: 70px 0 30px;
+  @media screen and (max-width: 950px) {
+    padding: 70px 20px 30px;
+  }
 `;

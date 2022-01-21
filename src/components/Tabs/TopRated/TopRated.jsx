@@ -17,7 +17,6 @@ const TopRated = (props) => {
   return (
     <TabsContent>
       <Pagination active={props.active} />
-      <div></div>
     </TabsContent>
   );
 };

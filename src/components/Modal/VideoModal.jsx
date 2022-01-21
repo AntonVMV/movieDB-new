@@ -1,13 +1,24 @@
-export const VideoModal = ({ video }) => {
-  console.log(video);
+import MainPortal from "./MainPortal";
+import { ModalBG, ModalContainer, CloseIcon } from "../../styles/components";
+
+export const VideoModal = ({ video, isOpen, onClose }) => {
   return (
-    <div>
-      {/* <iframe
-        title="trailer"
-        width="640"
-        height="360"
-        src={`https://www.youtube.com/embed/${video.key}`}
-      /> */}
-    </div>
+    <>
+      {isOpen && (
+        <MainPortal>
+          <ModalBG onClick={onClose}>
+            <ModalContainer>
+              <CloseIcon size="2em" onClick={onClose} />
+              <iframe
+                frameBorder="0"
+                title="trailer"
+                allowFullScreen="allowfullscreen"
+                src={`https://www.youtube.com/embed/${video}`}
+              />
+            </ModalContainer>
+          </ModalBG>
+        </MainPortal>
+      )}
+    </>
   );
 };

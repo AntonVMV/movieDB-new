@@ -17,7 +17,6 @@ const Upcoming = (props) => {
   return (
     <TabsContent>
       <Pagination active={props.active} />
-      <div></div>
     </TabsContent>
   );
 };

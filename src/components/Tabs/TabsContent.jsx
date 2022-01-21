@@ -15,7 +15,7 @@ export const TabsContent = ({ children }) => {
 
   return (
     <ContentContainer>
-      {children[1]}
+      {children && children[1]}
 
       {data?.length === 0 && (
         <NoResultsContainer>
@@ -31,7 +31,7 @@ export const TabsContent = ({ children }) => {
         </TabList>
       )}
 
-      {data?.length > 1 && children[0]}
+      {data?.length > 1 && (children[0] || children)}
     </ContentContainer>
   );
 };

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   InfoContainer,
   PosterImg,
@@ -5,10 +6,16 @@ import {
   InformationItem,
   SideContainer,
   VideoContainer,
+  TrailerImage,
+  PlayImg,
 } from "../../../styles/detailsPage";
 import { XSmallText, SmallText, SmallTitle } from "../../../styles/text";
+import { useState } from "react";
+import { VideoModal } from "../../Modal/VideoModal";
 
 export const MovieDetails = ({ data }) => {
+  const [modalVideo, setModalVideo] = useState("");
+
   const getCrew = (job) => {
     const result = data.credits.crew.reduce((acc, item) => {
       if (item.job === job) {
@@ -81,16 +88,30 @@ export const MovieDetails = ({ data }) => {
         <SideContainer>
           <SmallTitle>Video:</SmallTitle>
           <VideoContainer>
-            {getTrailers().map((item) => {
-              return (
-                <img
-                  src={`https://img.youtube.com/vi/${item.key}/0.jpg`}
-                  alt="Video preview"
-                />
-              );
-            })}
+            {getTrailers().length > 0 ? (
+              getTrailers().map((item) => {
+                return (
+                  <React.Fragment key={item.id}>
+                    <TrailerImage
+                      onClick={() => setModalVideo(item.key)}
+                      url={`https://img.youtube.com/vi/${item.key}/0.jpg`}
+                      alt="Video preview"
+                    >
+                      <PlayImg />
+                    </TrailerImage>
+                  </React.Fragment>
+                );
+              })
+            ) : (
+              <SmallText>No Video</SmallText>
+            )}
           </VideoContainer>
         </SideContainer>
+        <VideoModal
+          isOpen={modalVideo}
+          onClose={() => setModalVideo(false)}
+          video={modalVideo}
+        />
       </InfoContainer>
     </>
   );

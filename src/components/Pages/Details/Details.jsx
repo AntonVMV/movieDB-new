@@ -7,8 +7,8 @@ import { MedTitle, SmallTitle, SmallText } from "../../../styles/text";
 import { MovieDetails } from "./MovieDetails";
 import { AboutItem } from "../../../styles/detailsPage";
 import { MovieCast } from "./MovieCast";
-import { VideoModal } from "../../Modal/VideoModal";
 import { LoadingBlock } from "../../../styles/components";
+import { Recommendations } from "./Recommendations";
 
 export const Details = () => {
   const dispatch = useDispatch();
@@ -18,10 +18,10 @@ export const Details = () => {
   useEffect(() => {
     dispatch(
       getDetailsRequest(
-        `movie/${search}?&language=en-US&append_to_response=videos,credits,images&include_image_language=en,null`
+        `movie/${search}?&language=en-US&append_to_response=videos,credits,images,recommendations&include_image_language=en,null`
       )
     );
-  }, []);
+  }, [search]);
 
   if (loading) {
     return <LoadingBlock />;
@@ -40,7 +40,7 @@ export const Details = () => {
             </AboutItem>
           )}
           <MovieCast cast={data.credits.cast} />
-          <VideoModal video={data.videos.results[0]} />
+          <Recommendations data={data.recommendations} />
         </>
       )}
     </DetailsContainer>

@@ -36,7 +36,7 @@ export const TabInfo = ({ item }) => {
               : null
           }
         >
-          <InfoIcon />
+          <InfoIcon onClick={(e) => e.preventDefault()} />
           <MovieInfo>
             <SmallTitle>{item.title}</SmallTitle>
             {item.overview && <SmallText>{strSlice(item.overview)}</SmallText>}
