@@ -97,7 +97,7 @@ export const VideoContainer = styled.div`
 
 export const TrailerImage = styled.div`
   background: ${(props) => `url(${props.url}) center center no-repeat`};
-  min-height: 200px;
+  min-height: 150px;
   background-size: cover;
   width: 100%;
   margin: 10px 0;
@@ -107,7 +107,7 @@ export const TrailerImage = styled.div`
   align-items: center;
   justify-content: center;
   @media screen and (max-width: 1300px) {
-    width: 300px;
+    min-width: 220px;
     margin: 0 10px;
   }
 `;
