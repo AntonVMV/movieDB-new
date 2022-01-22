@@ -88,6 +88,7 @@ export const VideoContainer = styled.div`
   }
   @media screen and (max-width: 1300px) {
     flex-direction: row;
+    padding: 10px 0;
     ::-webkit-scrollbar {
       height: 5px;
       background-color: transparent;
@@ -107,7 +108,8 @@ export const TrailerImage = styled.div`
   align-items: center;
   justify-content: center;
   @media screen and (max-width: 1300px) {
-    min-width: 220px;
+    min-width: 270px;
+    max-width: 300px;
     margin: 0 10px;
   }
 `;
@@ -115,7 +117,7 @@ export const TrailerImage = styled.div`
 export const PlayImg = styled(BsPlayCircle)`
   width: 100%;
   height: 100%;
-  padding: 70px;
+  padding: 50px;
   position: absolute;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
