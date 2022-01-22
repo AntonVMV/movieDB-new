@@ -27,12 +27,12 @@ export const Carousel = () => {
     dispatch(getCarouselRequest());
   }, []);
 
-  // useEffect(() => {
-  //   if (movies) {
-  //     const timeout = setTimeout(nextSlide, 5000);
-  //     return () => clearTimeout(timeout);
-  //   }
-  // }, [movies, current]);
+  useEffect(() => {
+    if (movies) {
+      const timeout = setTimeout(nextSlide, 5000);
+      return () => clearTimeout(timeout);
+    }
+  }, [movies, current]);
 
   const nextSlide = () => {
     setCurrent((current) => (current === movies.length - 1 ? 0 : current + 1));
